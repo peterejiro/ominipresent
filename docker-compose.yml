@@ -1,0 +1,16 @@
+version: '3'
+services:
+  hrmodule:
+    build:
+      context: ./hrmodule
+      dockerfile: Dockerfile
+    volumes:
+      - ./hrmodule:/app
+    networks:
+      hr_net:
+    ports:
+      - "8000:8000"
+    restart: always
+
+networks:
+  hr_net:
